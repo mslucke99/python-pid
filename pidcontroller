@@ -1,0 +1,65 @@
+import datetime
+
+def setSetpoint(point):
+    setpoint = point
+    
+def setTolerance(tolerance):
+    tol = tolerance
+    
+def setPID(p_val, i_val, d_val):
+    kp = p_val
+    ki = i_val
+    kd = d_val
+    
+def getInput(input):
+    return input
+
+
+def getp():
+    oldp = pv
+    pv = setpoint - getInput(input_source)
+    #return pv
+    pvals.append(pv)
+    
+ #TODO make geti()   
+    
+def getd():
+    dv = pv - oldp
+    #return dv
+    
+
+def returnOutput():
+    #pv = getp()
+    #iv = geti()
+    #dv = getd()
+    getp()
+    #geti()
+    getd()
+    
+    
+    out = kp * pv + kd * dv
+    
+    return out
+
+pv = 0
+oldp 
+iv = 0
+dv = 0
+pvals = []
+#start_time = 0
+
+def start(point, tolerance, p_val, i_val, d_val, type, input_source):
+    setSetpoint(point)
+    setTolerance(tolerance)
+    setPID(p_val, i_val, d_val)
+    loop = True
+    if type == 0:
+        while loop:
+            if getp() > setpoint - tolerance:
+                if getp < setpoint + tolerance:
+                    loop = False
+            else:
+                output = returnoutput()
+                
+                
+    
